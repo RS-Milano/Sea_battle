@@ -1,4 +1,4 @@
-from cat_class import Cat
+from class_cat import Cat
 
 baron = Cat("Baron", "Male", 2)
 sam = Cat("Sam", "Male", 2)
