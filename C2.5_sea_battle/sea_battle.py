@@ -1,3 +1,5 @@
+import os
+
 class Playing_field:
     def __init__(self, name):
         self.name = name
@@ -30,7 +32,8 @@ class Game:
 
     @staticmethod
     def greeting():
-        print("\n    Hi! This is a sea battle game.\n\
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("    Hi! This is a sea battle game.\n\
     You have to play with the computer.\n\
     The playing field is 6 by 6 cells.\n\
     Each player places 7 ships on the field:\n\
@@ -44,10 +47,12 @@ class Game:
             return False
 
     def player_field_creation(self):
-        pass
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("Let's place your ships on the field")
 
     def play_game(self):
-        print(self.greeting())
+        if self.greeting():
+            pass
             
             
 
