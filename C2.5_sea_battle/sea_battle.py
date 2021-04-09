@@ -12,6 +12,11 @@ class Playing_field:
             yield f"| {i + 1} | {' | '.join(line)} |"
             yield separator
 
+class Ship:
+    def __init__(self, length, direction):
+        self.length = length
+        self.direction = direction
+
 class Game:
     def __init__(self, player, computer):
         self.player = player
@@ -23,7 +28,34 @@ class Game:
             print(i + " " * 10 + j)
         print()
 
-player_field = Playing_field("player")
-computer_field = Playing_field("computer")
-game = Game(player_field, computer_field)
-game.show_field()
+    @staticmethod
+    def greeting():
+        print("\n    Hi! This is a sea battle game.\n\
+    You have to play with the computer.\n\
+    The playing field is 6 by 6 cells.\n\
+    Each player places 7 ships on the field:\n\
+    1 ship three-cell ■ ■ ■\n\
+    2 ships two-cell ■ ■\n\
+    4 ships unicellular ■")
+        result = input("    Ready for play? (Y/N): ").lower()
+        if result == "y":
+            return True
+        else:
+            return False
+
+    def player_field_creation(self):
+        pass
+
+    def play_game(self):
+        print(self.greeting())
+            
+            
+
+player = Playing_field("player")
+computer = Playing_field("computer")
+game = Game(player, computer)
+game.play_game()
+
+
+
+# Ships can not be located in adjacent cells.
