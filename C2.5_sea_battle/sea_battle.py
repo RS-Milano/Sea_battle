@@ -1,3 +1,4 @@
+import os
 from random import randint
 
 class Playing_field:
@@ -199,6 +200,7 @@ class Game:
         switch = True
         while True:
             if switch:
+                os.system("cls" if os.name == "nt" else "clear")
                 self.show_field()
                 try:
                     move = self.computer.take_a_shot(Player(self.player).get_move())
